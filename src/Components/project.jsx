@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from "react";
 
-const Project = () => {
-    state = {  }
-    render() {
-        return (  );
-    }
-}
+const Project = props => {
+  const { title, description, project } = props;
 
- 
+  //state = {};
+
+  return (
+    <div className="col-md-4">
+      <h4>{title}</h4>
+      <p>{description}</p>
+    </div>
+  );
+};
+
 export default Project;
