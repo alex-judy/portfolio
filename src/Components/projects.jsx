@@ -7,7 +7,7 @@ const Projects = props => {
   return (
     <div className="Projects row">
       {projects.map(project => (
-        <Project key={project.id} project={project} imageUri="discord.svg" />
+        <Project key={project.id} project={project} />
       ))}
     </div>
   );
