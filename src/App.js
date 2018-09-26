@@ -11,31 +11,36 @@ class App extends Component {
         id: 1,
         title: "Discord Bot",
         description: "Discord Bot Description",
-        imageUri: "discord.svg"
+        technologies: [],
+        imageSrc: "discord.svg"
       },
       {
         id: 2,
         title: "Twitter Bot",
         description: "Twitter Bot Description",
-        imageUri: ""
+        technologies: [],
+        imageSrc: "testFail.png"
       },
       {
         id: 3,
         title: "Expense Tracker",
         description: "Expense Tracker Description",
-        imageUri: ""
+        technologies: [],
+        imageSrc: "testFail.png"
       },
       {
         id: 4,
         title: "MFA Application",
         description: "MFA Application Description",
-        imageUri: ""
+        technologies: [],
+        imageSrc: "testFail.png"
       },
       {
         id: 5,
         title: "Connect Win Tracker",
         description: "Connect Win Tracker Description",
-        imageUri: ""
+        technologies: [],
+        imageSrc: "testFail.png"
       }
     ]
   };
