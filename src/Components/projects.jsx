@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from "react";
+import Project from "./project";
+import "../styles/projects.css";
 
-class Projects = () => {
-    state = {  }
+const Projects = props => {
+  const { projects } = props;
+  return (
+    <div className="Projects row">
+      {projects.map(project => (
+        <Project key={project.id} project={project} />
+      ))}
+    </div>
+  );
+};
 
-    render() { 
-        return (  );
-    }
-}
- 
 export default Projects;
