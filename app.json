@@ -1,8 +1,6 @@
 {
   "name": "portfolio-main",
-  "scripts": {
-    "postdeploy": "react-scripts build"
-  },
+  "scripts": {},
   "env": {},
 
   "formation": {

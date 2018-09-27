@@ -23,8 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --fix src/.",
-    "precommit": "lint-staged",
-    "heroku-postbuild": "npm run build"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,md}": [
