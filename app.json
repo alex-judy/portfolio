@@ -1,10 +1,7 @@
 {
   "name": "portfolio-main",
-
-  "scripts": {
-  },
-  "env": {
-  },
+  "scripts": {},
+  "env": {},
 
   "formation": {
     "web": {
@@ -12,13 +9,11 @@
     }
   },
 
-  "addons": [
-
-  ],
+  "addons": [],
 
   "buildpacks": [
     {
-      "url": "heroku/nodejs"
+      "url": "mars/create-react-app"
     }
   ]
 }
