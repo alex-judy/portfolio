@@ -12,35 +12,43 @@ class App extends Component {
         title: "Discord Bot",
         description: "Discord Bot Description",
         technologies: [],
-        imageSrc: "discord.svg"
+        imageSrc: "discord.svg",
+        imageStyles: {
+          backgroundColor: "gray",
+          width: "100%"
+        }
       },
       {
         id: 2,
         title: "Twitter Bot",
         description: "Twitter Bot Description",
         technologies: [],
-        imageSrc: "testFail.png"
+        imageSrc: "testFail.png",
+        imageStyles: {}
       },
       {
         id: 3,
         title: "Expense Tracker",
         description: "Expense Tracker Description",
         technologies: [],
-        imageSrc: "testFail.png"
+        imageSrc: "testFail.png",
+        imageStyles: {}
       },
       {
         id: 4,
         title: "MFA Application",
         description: "MFA Application Description",
         technologies: [],
-        imageSrc: "testFail.png"
+        imageSrc: "testFail.png",
+        imageStyles: {}
       },
       {
         id: 5,
         title: "Connect Win Tracker",
         description: "Connect Win Tracker Description",
         technologies: [],
-        imageSrc: "testFail.png"
+        imageSrc: "testFail.png",
+        imageStyles: {}
       }
     ]
   };

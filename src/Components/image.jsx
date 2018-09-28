@@ -7,7 +7,8 @@ class Image extends Component {
     this.state = {
       imageStatus: "loading",
       hasError: false,
-      imageSrc: this.props.imageSrc
+      imageSrc: this.props.imageSrc,
+      imageStyles: this.props.imageStyles
     };
   }
 
@@ -35,11 +36,6 @@ class Image extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: "gray",
-      width: "100%"
-    };
-
     return (
       <img
         className="Image"
@@ -47,7 +43,7 @@ class Image extends Component {
         src={this.loadImage()}
         onLoad={this.handleImageLoaded.bind(this)}
         onError={this.handleImageErrored.bind(this)}
-        style={style}
+        style={this.state.imageStyles}
         height="100"
       />
     );
