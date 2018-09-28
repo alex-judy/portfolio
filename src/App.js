@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./styles/app.css";
 import Projects from "./components/projects";
 import NavBar from "./components/navbar";
