@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./styles/app.css";
 import Projects from "./components/projects";
 import NavBar from "./components/navbar";
+import Home from "./components/home";
+import Contact from "./components/contact";
 
 class App extends Component {
   state = {
@@ -63,10 +65,20 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="App">
-          <NavBar onAlert={this.handleAlert} />
-          <div className="container">
-            <Projects projects={this.state.projects} />
-          </div>
+          <Router>
+            <div>
+              <NavBar onAlert={this.handleAlert} />
+              <div className="container">
+                <p>APP</p>
+                <Route exact path="/" component={Home} />
+                <Route path="/contact" component={Contact} />
+                <Route
+                  path="/projects"
+                  render={() => <Projects projects={this.state.projects} />}
+                />
+              </div>
+            </div>
+          </Router>
         </div>
       </React.Fragment>
     );
