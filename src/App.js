@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./styles/app.css";
 import Projects from "./components/projects";
@@ -9,7 +9,7 @@ import Contact from "./components/contact";
 
 class App extends Component {
   state = {
-    // Placeholder for projects. Will be moved to a DB table.
+    // TODO: Placeholder for projects. Will be moved to a DB table.
     projects: [
       {
         id: 1,
@@ -64,22 +64,19 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="App">
-          <Router>
-            <div>
-              <NavBar onAlert={this.handleAlert} />
-              <div className="container">
-                <p>APP</p>
-                <Route exact path="/" component={Home} />
-                <Route path="/contact" component={Contact} />
-                <Route
-                  path="/projects"
-                  render={() => <Projects projects={this.state.projects} />}
-                />
-              </div>
+        <Router>
+          <div className="App">
+            <NavBar onAlert={this.handleAlert} />
+            <div className="container">
+              <Route exact path="/" component={Home} />
+              <Route path="/contact" component={Contact} />
+              <Route
+                path="/projects"
+                render={() => <Projects projects={this.state.projects} />}
+              />
             </div>
-          </Router>
-        </div>
+          </div>
+        </Router>
       </React.Fragment>
     );
   }
