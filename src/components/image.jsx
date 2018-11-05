@@ -44,8 +44,8 @@ class Image extends Component {
         className="Image"
         alt="Logo"
         src={this.loadImage()}
-        onLoad={this.handleImageLoaded.bind(this)}
-        onError={this.handleImageErrored.bind(this)}
+        onLoad={this.handleImageLoaded}
+        onError={this.handleImageErrored}
         style={this.state.imageStyles}
         height="100"
       />
