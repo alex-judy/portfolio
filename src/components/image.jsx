@@ -10,6 +10,9 @@ class Image extends Component {
       imageSrc: this.props.imageSrc,
       imageStyles: this.props.imageStyles
     };
+
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
+    this.handleImageErrored = this.handleImageErrored.bind(this);
   }
 
   handleImageLoaded() {
