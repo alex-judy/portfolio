@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from "reactstrap";
 
 import "./styles/app.css";
 import Projects from "./components/projects";
@@ -61,20 +62,24 @@ class App extends Component {
     console.log("Click");
   };
 
+  // componentDidMount() {
+  //   alert("Site is currently under construction. Please check back later!");
+  // }
+
   render() {
     return (
       <React.Fragment>
         <Router>
           <div className="App">
             <NavBar onAlert={this.handleAlert} />
-            <div className="container">
+            <Container>
               <Route exact path="/" component={Home} />
               <Route path="/contact" component={Contact} />
               <Route
                 path="/projects"
                 render={() => <Projects projects={this.state.projects} />}
               />
-            </div>
+            </Container>
           </div>
         </Router>
       </React.Fragment>
