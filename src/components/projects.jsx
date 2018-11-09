@@ -1,16 +1,48 @@
-import React from "react";
+import React, { Component } from "react";
 import Project from "./project";
+import { Row } from "reactstrap";
 import "../styles/projects.css";
 
-const Projects = props => {
-  const { projects } = props;
-  return (
-    <div className="Projects row">
-      {projects.map(project => (
-        <Project key={project.id} project={project} />
-      ))}
-    </div>
-  );
-};
+class Projects extends Component {
+  constructor(props) {
+    super(props);
+    this.projects = this.props.projects;
+
+    this.incrementRow = this.incrementRow.bind(this);
+  }
+
+  // TODO: Add new row for every 3rd element.
+  incrementRow() {
+    this.projects.map(project => {
+      if (project.id % 2 === 1) {
+        return (
+          <Row>
+            <Project key={project.id} project={project} />
+          </Row>
+        );
+      } else {
+        return <Project key={project.id} project={project} />;
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div className="Projects">
+        {this.projects.map(project => {
+          if (project.id % 2 === 1) {
+            return (
+              <Row>
+                <Project key={project.id} project={project} />
+              </Row>
+            );
+          } else {
+            return <Project key={project.id} project={project} />;
+          }
+        })}
+      </div>
+    );
+  }
+}
 
 export default Projects;
