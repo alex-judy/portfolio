@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from "reactstrap";
+
 import "./styles/app.css";
 import Projects from "./components/projects";
 import NavBar from "./components/navbar";
+import Home from "./components/home";
+import Contact from "./components/contact";
 
 class App extends Component {
   state = {
-    // Placeholder for projects. Will be moved to a DB table.
+    // TODO: Placeholder for projects. Will be moved to a DB table.
     projects: [
       {
         id: 1,
@@ -57,15 +62,26 @@ class App extends Component {
     console.log("Click");
   };
 
+  // componentDidMount() {
+  //   alert("Site is currently under construction. Please check back later!");
+  // }
+
   render() {
     return (
       <React.Fragment>
-        <div className="App">
-          <NavBar onAlert={this.handleAlert} />
-          <div className="container">
-            <Projects projects={this.state.projects} />
+        <Router>
+          <div className="App">
+            <NavBar onAlert={this.handleAlert} />
+            <Container>
+              <Route exact path="/" component={Home} />
+              <Route path="/contact" component={Contact} />
+              <Route
+                path="/projects"
+                render={() => <Projects projects={this.state.projects} />}
+              />
+            </Container>
           </div>
-        </div>
+        </Router>
       </React.Fragment>
     );
   }

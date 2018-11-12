@@ -1,22 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Navbar, Nav, NavItem } from "reactstrap";
+
 import "../styles/navbar.css";
 
 const NavBar = props => {
-  const { onAlert } = props;
-
   return (
-    <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div className="container-fluid">
-        <div className="navbar-btn">
-          <button onClick={onAlert} type="button" className="btn btn-default">
-            ARJ
-          </button>
-        </div>
-        <h5 className="navbar-brand">
-          Site under construction, check back later!
-        </h5>
-      </div>
-    </nav>
+    <div className="NavBar">
+      <Navbar color="dark" dark expand="md">
+        <Nav navbar>
+          <NavItem>
+            <Link to="/">Home</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/contact">Contact</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/projects">Projects</Link>
+          </NavItem>
+        </Nav>
+      </Navbar>
+    </div>
   );
 };
 
