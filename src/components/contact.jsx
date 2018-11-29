@@ -15,7 +15,7 @@ class Contact extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     const { email, firstName, lastName } = this.state;
 
     // Debugging
@@ -23,13 +23,13 @@ class Contact extends Component {
       `A name was submitted:
         First Name: ${firstName}
         Last Name: ${lastName}
-       
+
        With an email at: ${email}`
     );
     e.preventDefault();
-  };
+  }
 
-  handleChange = e => {
+  handleChange(e) {
     if (e.target.name === 'email') {
       this.setState({ email: e.target.value });
     } else if (e.target.name === 'firstName') {
@@ -37,12 +37,12 @@ class Contact extends Component {
     } else if (e.target.name === 'lastName') {
       this.setState({ lastName: e.target.value });
     }
-  };
+  }
 
   render() {
     return (
       <div className="Contact">
-        <Form onSubmit={this.handleSubmit()}>
+        <Form onSubmit={this.handleSubmit}>
           <Row form>
             <Col md={6}>
               <FormGroup>
@@ -52,7 +52,7 @@ class Contact extends Component {
                   id="contactEmail"
                   type="email"
                   placeholder="example@mail.com"
-                  onChange={this.handleChange()}
+                  onChange={this.handleChange}
                 />
               </FormGroup>
             </Col>
@@ -66,7 +66,7 @@ class Contact extends Component {
                   id="firstNameInput"
                   type="text"
                   placeholder=""
-                  onChange={this.handleChange()}
+                  onChange={this.handleChange}
                 />
               </FormGroup>
             </Col>
@@ -78,7 +78,7 @@ class Contact extends Component {
                   id="lastNameInput"
                   type="text"
                   placeholder=""
-                  onChange={this.handleChange()}
+                  onChange={this.handleChange}
                 />
               </FormGroup>
             </Col>

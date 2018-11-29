@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CardColumns, Row } from 'reactstrap';
+import { CardDeck } from 'reactstrap';
 import Project from './project';
 import '../styles/projects.css';
 
@@ -24,24 +24,17 @@ class Projects extends Component {
   // TODO: Finish implementing. Needs to return full component.
   incrementRow() {
     const chunks = this.splitProjects();
-    return chunks.map(chunk => (
-      <Row>
-        {chunk.map(project => (
-          <CardColumns>
-            <Project key={project.id} project={project} />
-          </CardColumns>
-        ))}
-      </Row>
-    ));
+    return chunks.map(chunk =>
+      chunk.map(project => <Project key={project.id} project={project} />)
+    );
   }
-  //        <CardDeck>
-  //   {this.projects.map(project => (
-  //     <Project key={project.id} project={project} />
-  //   ))}
-  // </CardDeck>
 
   render() {
-    return <div className="Projects">{this.incrementRow()}</div>;
+    return (
+      <div className="Projects">
+        <CardDeck>{this.incrementRow()}</CardDeck>
+      </div>
+    );
   }
 }
 
