@@ -1,64 +1,60 @@
-import React, { Component } from "react";
-import { Col, Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
+import React, { Component } from 'react';
+import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
+import PropTypes from 'prop-types';
+import '../styles/project.css';
 
-import "../styles/project.css";
+const errorImage = require('../assets/coding.svg');
 
 class Project extends Component {
   constructor(props) {
     super(props);
-    this.project = this.props.project;
-    this.state = {
-      imageStatus: "loading",
-      hasError: false,
-      imageSrc: this.project.imageSrc,
-      imageStyles: this.project.imageStyles
-    };
-
-    this.handleImageLoaded = this.handleImageLoaded.bind(this);
-    this.handleImageErrored = this.handleImageErrored.bind(this);
+    this.state = {};
   }
 
-  handleImageLoaded() {
-    this.setState({ imageStatus: "loaded" });
-  }
-
-  handleImageErrored() {
-    this.setState({
-      imageStatus: "failed to load",
-      hasError: true,
-      imageSrc: "../assets/coding.svg"
+  appendTechnologies = technologies => {
+    let appended = '';
+    technologies.forEach((technology, index) => {
+      if (index === 0) appended += technology;
+      else appended += `, ${technology}`;
     });
-  }
+    return appended;
+  };
 
-  loadImage() {
-    const defaultImgSrc = "coding.svg";
+  loadImage = imageSrc => {
     try {
-      return require(`../assets/${this.state.imageSrc}`);
+      // Dynamic image load
+      return require(`../assets/${imageSrc}`);
     } catch (e) {
       console.log(e);
-      return require(`../assets/${defaultImgSrc}`);
+      return errorImage;
     }
-  }
+  };
 
   render() {
+    const { project } = this.props;
+    const { title, imageStyles, description, technologies, imageSrc } = project;
     return (
-      <Col sm="6">
-        <Card height="100%">
-          <CardImg
-            src={this.loadImage()}
-            onLoad={this.handleImageLoaded}
-            onError={this.handleImageErrored}
-            style={this.state.imageStyles}
-            width="100"
-          />
-          <CardBody>
-            <CardTitle>{this.project.title}</CardTitle>
-            <CardText>{this.project.description}</CardText>
-          </CardBody>
-        </Card>
-      </Col>
+      <Card height="100%">
+        <CardImg src={this.loadImage(imageSrc)} style={imageStyles} width="100" />
+        <CardBody>
+          <CardTitle>{title}</CardTitle>
+          <CardSubtitle>{this.appendTechnologies(technologies)}</CardSubtitle>
+          <CardText>{description}</CardText>
+        </CardBody>
+      </Card>
     );
   }
 }
+
+Project.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    technologies: PropTypes.arrayOf(String),
+    imageSrc: PropTypes.string,
+    imageStyles: PropTypes.objectOf(String)
+  }).isRequired
+};
 
 export default Project;
