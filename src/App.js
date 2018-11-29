@@ -67,18 +67,16 @@ class App extends Component {
   render() {
     const { projects } = this.state;
     return (
-      <React.Fragment>
-        <Router>
-          <div className="App">
-            <NavBar />
-            <Container>
-              <Route exact path="/" component={Home} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/projects" render={() => <Projects projects={projects} />} />
-            </Container>
-          </div>
-        </Router>
-      </React.Fragment>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Container>
+            <Route exact path="/" component={Home} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/projects" render={() => <Projects projects={projects} />} />
+          </Container>
+        </div>
+      </Router>
     );
   }
 }
