@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import Gravatar from "react-gravatar";
+import React, { Component } from 'react';
+import Gravatar from 'react-gravatar';
 
 class Home extends Component {
   state = {};
+
   render() {
     return (
       <div className="Home">
