@@ -1,12 +1,8 @@
-.navbar-brand {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  text-align: center;
-  margin: auto;
+.nav-item {
+  padding-right: 30px;
+  font-weight: bold;
 }
 
-.navbar-btn {
-  z-index: 1;
+.nav-item > a {
+  color: coral;
 }

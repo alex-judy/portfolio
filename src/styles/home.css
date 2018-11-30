@@ -1,0 +1,25 @@
+#Home {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-auto-rows: auto;
+}
+
+#homeTitle {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#homeArticle {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+#gravatar {
+  border-radius: 50%;
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
