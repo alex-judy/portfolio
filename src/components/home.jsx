@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <div id="Home">
-        <h3 id="homeTitle">HOME PAGE</h3>
+        <h3 id="homeTitle">SITE IS UNDER CONSTRUCTION</h3>
         <Gravatar id="gravatar" email="alex.rjudy@gmail.com" size={200} />
         <article id="homeArticle">
           <h4>SOME TEST TEXT FOR A HEADER</h4>

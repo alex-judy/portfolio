@@ -15,6 +15,13 @@ class App extends Component {
   //   alert("Site is currently under construction. Please check back later!");
   // }
 
+  componentWillMount() {
+    fetch('https://github.com/alex-judy/jarvis-bot/blob/master/README.md', { mode: 'no-cors' })
+      .then(res => res.blob())
+      .then(res => console.log(res))
+      .catch(e => console.log(e));
+  }
+
   render() {
     return (
       <Router>
