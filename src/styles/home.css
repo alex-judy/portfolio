@@ -1,7 +1,7 @@
 #Home {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 50px 200px;
+  grid-template-rows: 100px 200px;
 }
 
 #homeTitle {
@@ -13,7 +13,7 @@
   grid-column-start: 1;
   grid-column-end: 6;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 #gravatar {

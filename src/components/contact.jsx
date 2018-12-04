@@ -43,7 +43,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="Contact">
+      <div id="Contact">
         <Form onSubmit={this.handleSubmit}>
           <Row form>
             <Col md={6}>
