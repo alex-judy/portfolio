@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
+
 import '../styles/project.css';
 
 const errorImage = require('../assets/coding.svg');
