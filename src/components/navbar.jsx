@@ -5,7 +5,7 @@ import { Navbar, Nav, NavItem } from 'reactstrap';
 import '../styles/navbar.css';
 
 const NavBar = () => (
-  <div className="NavBar">
+  <div id="NavBar">
     <Navbar color="dark" dark expand="md">
       <Nav navbar>
         <NavItem>
