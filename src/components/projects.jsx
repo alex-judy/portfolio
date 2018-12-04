@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { CardDeck } from 'reactstrap';
-import Project from './project';
+
 import '../styles/projects.css';
+import Project from './project';
 
 class Projects extends Component {
   constructor() {

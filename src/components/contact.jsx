@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
 
+import '../styles/contact.css';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
