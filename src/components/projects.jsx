@@ -106,7 +106,7 @@ class Projects extends Component {
 
   splitProjects = () => {
     const chunks = [];
-    const chunkSize = 3;
+    const chunkSize = 4;
     const { projects } = this.state;
 
     while (projects.length > 0) {

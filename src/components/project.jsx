@@ -35,7 +35,7 @@ class Project extends Component {
     const { project } = this.props;
     const { title, imageStyles, description, technologies, imageSrc } = project;
     return (
-      <Card height="100%">
+      <Card id="Project" height="100%">
         <CardImg src={this.loadImage(imageSrc)} style={imageStyles} width="100" />
         <CardBody>
           <CardTitle>{title}</CardTitle>
