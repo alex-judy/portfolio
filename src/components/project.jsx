@@ -49,12 +49,12 @@ class Project extends Component {
 
 Project.propTypes = {
   project: PropTypes.shape({
-    id: PropTypes.number,
     title: PropTypes.string,
     description: PropTypes.string,
     technologies: PropTypes.arrayOf(String),
     imageSrc: PropTypes.string,
-    imageStyles: PropTypes.objectOf(String)
+    imageStyles: PropTypes.objectOf(String),
+    repoLink: PropTypes.string
   }).isRequired
 };
 
