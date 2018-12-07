@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
 
+import '../styles/contact.css';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +43,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="Contact">
+      <div id="Contact">
         <Form onSubmit={this.handleSubmit}>
           <Row form>
             <Col md={6}>
