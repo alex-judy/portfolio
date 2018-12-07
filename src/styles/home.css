@@ -1,7 +1,7 @@
 #Home {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 100px 200px;
+  grid-template-rows: 50px 200px;
   justify-content: center;
 }
 
@@ -13,8 +13,8 @@
 #homeArticle {
   grid-column-start: 2;
   grid-column-end: 5;
-  text-align: center;
   padding-top: 2rem;
+  text-align: center;
 }
 
 #gravatar {
@@ -33,4 +33,9 @@
 
 .social {
   color: coral;
+  padding-left: 4rem;
+}
+
+a:hover {
+  color: darkgrey;
 }
