@@ -23,8 +23,12 @@
 }
 
 #socials {
-  text-align: center;
   grid-row-start: 4;
-  grid-column-start: 1;
-  padding-top: 3rem;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  padding-top: 2rem;
+}
+
+.social {
+  color: coral;
 }
