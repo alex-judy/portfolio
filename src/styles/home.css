@@ -7,7 +7,9 @@
 
 #homeTitle {
   grid-column-start: 3;
+  grid-column-end: 4;
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 #homeArticle {
