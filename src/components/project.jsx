@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { Card, CardImg, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
+
 import '../styles/project.css';
 
 const errorImage = require('../assets/coding.svg');
@@ -34,7 +35,7 @@ class Project extends Component {
     const { project } = this.props;
     const { title, imageStyles, description, technologies, imageSrc } = project;
     return (
-      <Card height="100%">
+      <Card id="Project" height="100%">
         <CardImg src={this.loadImage(imageSrc)} style={imageStyles} width="100" />
         <CardBody>
           <CardTitle>{title}</CardTitle>
@@ -48,12 +49,12 @@ class Project extends Component {
 
 Project.propTypes = {
   project: PropTypes.shape({
-    id: PropTypes.number,
     title: PropTypes.string,
     description: PropTypes.string,
     technologies: PropTypes.arrayOf(String),
     imageSrc: PropTypes.string,
-    imageStyles: PropTypes.objectOf(String)
+    imageStyles: PropTypes.objectOf(String),
+    repoLink: PropTypes.string
   }).isRequired
 };
 
