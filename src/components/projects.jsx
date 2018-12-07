@@ -12,7 +12,8 @@ class Projects extends Component {
       projects: [
         {
           title: 'Jarvis',
-          description: `Jarvis is a discord server management bot built in Python. It's meant to fill in the administration holes of Discord.`,
+          description:
+            'Jarvis is a discord server management bot built in Python. It’s meant to fill in the administration holes of Discord.',
           technologies: ['Python'],
           imageSrc: 'discord_dark.svg',
           imageStyles: {},
@@ -20,7 +21,8 @@ class Projects extends Component {
         },
         {
           title: 'Metro Louisville Bot',
-          description: `The Metro Louisville Twitter Bot was built to allow users to easily query Louisville city records. Using Twitter as a UI, users can send a tweet @ the bot and get an API response. `,
+          description:
+            'The Metro Louisville Twitter Bot was built to allow users to easily query Louisville city records. Using Twitter as a UI, users can send a tweet @ the bot and get an API response.',
           technologies: ['Java', 'MySQL'],
           imageSrc: 'twitter.svg',
           imageStyles: {},
@@ -28,7 +30,8 @@ class Projects extends Component {
         },
         {
           title: 'MERN Site Tracker',
-          description: `This application tracks the status of my hosted applications using API calls. I also added user authentication with JWT / Passport for security.`,
+          description:
+            'This application tracks the status of my hosted applications. I also added user authentication with JWT / Passport for security.',
           technologies: ['React', 'Node', 'Mongo', 'JWT', 'Passport'],
           imageSrc: 'testFail.png',
           imageStyles: {},
@@ -36,7 +39,7 @@ class Projects extends Component {
         },
         {
           title: 'Blazor Win Tracker',
-          description: `Using Blazor I developed a Win Tracker for our sports teams at HMB.`,
+          description: 'Using Blazor I developed a Win Tracker for our sports teams at HMB.',
           technologies: ['C#', '.NET', 'Blazor'],
           imageSrc: 'blazor.svg',
           imageStyles: { 'background-color': 'darkgray' },
