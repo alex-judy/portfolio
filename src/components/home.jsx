@@ -23,13 +23,13 @@ class Home extends Component {
         </article>
         <div id="socials">
           <a className="social" href="https://github.com/alex-judy">
-            <FontAwesomeIcon icon={faGithub} size="10x" />
+            <FontAwesomeIcon icon={faGithub} size="8x" />
           </a>
           <a className="social" href="https://gitlab.com/alex-judy">
-            <FontAwesomeIcon icon={faGitlab} size="10x" />
+            <FontAwesomeIcon icon={faGitlab} size="8x" />
           </a>
           <a className="social" href="https://www.linkedin.com/in/alex-judy">
-            <FontAwesomeIcon icon={faLinkedin} size="10x" />
+            <FontAwesomeIcon icon={faLinkedin} size="8x" />
           </a>
         </div>
       </div>

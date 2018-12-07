@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 100px 200px;
+  justify-content: center;
 }
 
 #homeTitle {
@@ -26,7 +27,8 @@
   grid-row-start: 4;
   grid-column-start: 2;
   grid-column-end: 5;
-  padding-top: 2rem;
+  padding-top: 4rem;
+  justify-content: end;
 }
 
 .social {
