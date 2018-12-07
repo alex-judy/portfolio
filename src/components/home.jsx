@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gravatar from 'react-gravatar';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faGitlab, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import '../styles/home.css';
 
@@ -21,15 +22,14 @@ class Home extends Component {
           </p>
         </article>
         <div id="socials">
-          Content Here
-          <a href="https://github.com/alex-judy">
-            <FontAwesome
-              className="super-crazy-colors"
-              name="rocket"
-              size="2x"
-              spin
-              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-            />
+          <a className="social" href="https://github.com/alex-judy">
+            <FontAwesomeIcon icon={faGithub} size="10x" />
+          </a>
+          <a className="social" href="https://gitlab.com/alex-judy">
+            <FontAwesomeIcon icon={faGitlab} size="10x" />
+          </a>
+          <a className="social" href="https://www.linkedin.com/in/alex-judy">
+            <FontAwesomeIcon icon={faLinkedin} size="10x" />
           </a>
         </div>
       </div>
