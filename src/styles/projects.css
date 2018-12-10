@@ -2,6 +2,10 @@
   padding-top: 50px;
 }
 
+#projectsTitle {
+  text-align: center;
+}
+
 .card-deck {
   padding-bottom: 1rem;
 }

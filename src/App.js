@@ -16,11 +16,18 @@ class App extends Component {
   // }
 
   componentWillMount() {
-    fetch('https://github.com/alex-judy/jarvis-bot/blob/master/README.md', { mode: 'no-cors' })
-      .then(res => res.blob())
+    fetch('https://api.github.com/repos/octokit/octokit.rb/contents/README.md', { mode: 'no-cors' })
+      .then(res => res.json())
       .then(res => console.log(res))
       .catch(e => console.log(e));
+
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Louisville,us&appid=6be7cf34a1db95dddede7685e93ddbb6
+    `)
+      .then(res => res.json())
+      .then(res => console.log(res.main.temp));
   }
+
+  // 6be7cf34a1db95dddede7685e93ddbb6
 
   render() {
     return (
