@@ -1,41 +1,17 @@
 #Home {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 50px 200px;
-  justify-content: center;
-}
-
-#homeTitle {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  text-align: center;
-  padding-bottom: 1rem;
-}
-
-#homeArticle {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  padding-top: 2rem;
   text-align: center;
 }
 
 #gravatar {
   border-radius: 50%;
-  grid-column-start: 3;
-  grid-column-end: 6;
 }
 
-#socials {
-  grid-row-start: 4;
-  grid-column-start: 2;
-  grid-column-end: 5;
-  padding-top: 4rem;
-  justify-content: end;
+.top-buffer {
+  margin-top: 20px;
 }
 
 .social {
   color: coral;
-  padding-left: 4rem;
 }
 
 a:hover {
