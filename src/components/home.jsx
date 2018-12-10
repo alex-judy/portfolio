@@ -28,24 +28,25 @@ class Home extends Component {
               <h4>Hi, I’m Alex. Thanks for stopping by!</h4>
               <p>
                 I am currently working for HMB as a software consultant. At this time, I am at
-                Mercer as a Security expert. I develop solutions in my spare time to help automate
-                daily tasks and fill in gaps that I find in applications.
+                Mercer as a member of the Software Security Group. I develop solutions to common
+                problems in my spare time to help automate daily tasks and fill in gaps that I find
+                in applications.
               </p>
             </article>
           </Col>
         </Row>
         <Row className="top-buffer">
-          <Col md={{ size: 1, offset: 3 }}>
+          <Col md={{ size: 2, offset: 2 }}>
             <a className="social" href="https://github.com/alex-judy">
               <FontAwesomeIcon icon={faGithub} size="8x" />
             </a>
           </Col>
-          <Col md={{ size: 1, offset: 1 }}>
+          <Col md={{ size: 2, offset: 1 }}>
             <a className="social" href="https://gitlab.com/alex-judy">
               <FontAwesomeIcon icon={faGitlab} size="8x" />
             </a>
           </Col>
-          <Col md={{ size: 1, offset: 1 }}>
+          <Col md={{ size: 2, offset: 1 }}>
             <a className="social" href="https://www.linkedin.com/in/alex-judy">
               <FontAwesomeIcon icon={faLinkedin} size="8x" />
             </a>
