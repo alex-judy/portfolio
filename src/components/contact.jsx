@@ -44,6 +44,11 @@ class Contact extends Component {
   render() {
     return (
       <div id="Contact">
+        <Row>
+          <Col>
+            <h4>Feature under construction. Please check back later.</h4>
+          </Col>
+        </Row>
         <Form onSubmit={this.handleSubmit}>
           <Row form>
             <Col md={6}>
