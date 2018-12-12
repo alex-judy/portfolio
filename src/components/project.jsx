@@ -33,15 +33,17 @@ class Project extends Component {
 
   render() {
     const { project } = this.props;
-    const { title, imageStyles, description, technologies, imageSrc } = project;
+    const { title, imageStyles, description, technologies, imageSrc, repoLink } = project;
     return (
       <Card id="Project" height="100%">
-        <CardImg src={this.loadImage(imageSrc)} style={imageStyles} width="100" />
-        <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <CardSubtitle>{this.appendTechnologies(technologies)}</CardSubtitle>
-          <CardText>{description}</CardText>
-        </CardBody>
+        <a href={repoLink}>
+          <CardImg src={this.loadImage(imageSrc)} style={imageStyles} width="100" />
+          <CardBody>
+            <CardTitle>{title}</CardTitle>
+            <CardSubtitle>{this.appendTechnologies(technologies)}</CardSubtitle>
+            <CardText>{description}</CardText>
+          </CardBody>
+        </a>
       </Card>
     );
   }
