@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { CardDeck } from 'reactstrap';
+import Project from './project';
 
 import '../styles/projects.css';
-import Project from './project';
 
 class Projects extends Component {
   constructor() {
@@ -42,7 +42,7 @@ class Projects extends Component {
           description: 'Using Blazor I developed a Win Tracker for our sports teams at HMB.',
           technologies: ['C#', '.NET Core', 'Blazor'],
           imageSrc: 'blazor.svg',
-          imageStyles: { 'background-color': 'darkgray' },
+          imageStyles: { backgroundColor: 'darkgray' },
           repoLink: 'https://github.com/alex-judy/connect-win-tracker'
         }
       ]
