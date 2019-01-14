@@ -7,27 +7,29 @@ import Projects from './components/projects';
 import NavBar from './components/navbar';
 import Home from './components/home';
 import Contact from './components/contact';
+import Footer from './components/footer';
 
 class App extends Component {
   state = {};
 
   // componentDidMount() {
-  //   alert("Site is currently under construction. Please check back later!");
+  //   alert(process.env.REACT_APP_USER);
   // }
 
   componentWillMount() {
-    fetch('https://api.github.com/repos/octokit/octokit.rb/contents/README.md', { mode: 'no-cors' })
+    fetch('https://api.github.com/repos/octokit/octokit.rb/contents/README.md', {
+      method: 'GET'
+    })
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => {
+        const readme = new File([res.content], 'README.md', {
+          type: 'md',
+          lastModified: Date.now()
+        });
+        console.log(readme);
+      })
       .catch(e => console.log(e));
-
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Louisville,us&appid=6be7cf34a1db95dddede7685e93ddbb6
-    `)
-      .then(res => res.json())
-      .then(res => console.log(res.main.temp));
   }
-
-  // 6be7cf34a1db95dddede7685e93ddbb6
 
   render() {
     return (
@@ -39,6 +41,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/projects" component={Projects} />
           </Container>
+          <Footer />
         </div>
       </Router>
     );

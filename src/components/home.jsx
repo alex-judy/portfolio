@@ -14,7 +14,7 @@ class Home extends Component {
       <div id="Home">
         <Row className="top-buffer">
           <Col>
-            <h3>Alex Judy</h3>
+            <h3>Hi, I’m Alex. Thanks for stopping by!</h3>
           </Col>
         </Row>
         <Row className="top-buffer">
@@ -25,7 +25,6 @@ class Home extends Component {
         <Row className="top-buffer">
           <Col md={{ size: 6, offset: 3 }}>
             <article id="homeArticle">
-              <h4>Hi, I’m Alex. Thanks for stopping by!</h4>
               <p>
                 I am currently working for HMB as a software consultant. At this time, I am at
                 Mercer as a member of the Software Security Group. I develop solutions to common
