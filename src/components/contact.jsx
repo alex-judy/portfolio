@@ -3,6 +3,11 @@ import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
 
 import '../styles/contact.css';
 
+const encode = data =>
+  Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -10,46 +15,47 @@ class Contact extends Component {
     this.state = {
       email: '',
       firstName: '',
-      lastName: ''
+      lastName: '',
+      message: ''
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.sendMail = this.sendMail.bind(this);
   }
 
-  handleSubmit(e) {
-    const { email, firstName, lastName } = this.state;
-
-    // Debugging
-    alert(
-      `A name was submitted:
-        First Name: ${firstName}
-        Last Name: ${lastName}
-
-       With an email at: ${email}`
-    );
-    e.preventDefault();
+  sendMail() {
+    fetch('/', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state })
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   }
 
   handleChange(e) {
-    if (e.target.name === 'email') {
-      this.setState({ email: e.target.value });
-    } else if (e.target.name === 'firstName') {
-      this.setState({ firstName: e.target.value });
-    } else if (e.target.name === 'lastName') {
-      this.setState({ lastName: e.target.value });
-    }
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.sendMail();
   }
 
   render() {
+    const { firstName, lastName, email, message } = this.state;
     return (
       <div id="Contact">
-        <Row>
-          <Col>
-            <h4>Feature under construction. Please check back later.</h4>
-          </Col>
-        </Row>
-        <Form onSubmit={this.handleSubmit}>
+        <Form
+          onSubmit={this.handleSubmit}
+          name="contact"
+          data-netlify="true"
+          netlify-honeypot="bot-form"
+        >
+          <input type="hidden" name="subject" value="Portfolio Contact Submission" />
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-form" />
           <Row form>
             <Col md={6}>
               <FormGroup>
@@ -60,6 +66,7 @@ class Contact extends Component {
                   type="email"
                   placeholder="example@mail.com"
                   onChange={this.handleChange}
+                  value={email}
                 />
               </FormGroup>
             </Col>
@@ -74,6 +81,7 @@ class Contact extends Component {
                   type="text"
                   placeholder=""
                   onChange={this.handleChange}
+                  value={firstName}
                 />
               </FormGroup>
             </Col>
@@ -86,10 +94,22 @@ class Contact extends Component {
                   type="text"
                   placeholder=""
                   onChange={this.handleChange}
+                  value={lastName}
                 />
               </FormGroup>
             </Col>
           </Row>
+          <FormGroup>
+            <Label for="messageInput">Message</Label>
+            <Input
+              type="textarea"
+              name="message"
+              id="messageInput"
+              placeholder=""
+              onChange={this.handleChange}
+              value={message}
+            />
+          </FormGroup>
           <Button type="submit">Send</Button>
         </Form>
       </div>
