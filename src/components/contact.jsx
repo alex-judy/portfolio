@@ -48,10 +48,11 @@ class Contact extends Component {
     return (
       <div id="Contact">
         <Form
-          onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           name="contact"
           data-netlify="true"
-          netlify-honeypot="bot-form"
+          // netlify-honeypot="bot-form"
+          method="POST"
         >
           <input type="hidden" name="subject" value="Portfolio Contact Submission" />
           <input type="hidden" name="form-name" value="contact" />
