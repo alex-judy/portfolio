@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "software-development-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal portfolio site built on Gatsby and React.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Alex Judy <alex.rjudy@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
