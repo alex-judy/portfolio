@@ -1,25 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavItem } from 'reactstrap';
+import { Link } from 'gatsby';
 
-import '../styles/navbar.css';
-
-const NavBar = () => (
-  <div id="NavBar">
-    <Navbar color="dark" dark expand="md">
-      <Nav navbar>
-        <NavItem>
+const Menu = () => (
+  <div id="NavBar" style={{
+    background: '#f4f4f4',
+    paddingTop: '10px'
+  }}>
+    <ul style={{
+      listStyle: 'none',
+      display: 'flex',
+      justifyContent: 'space-evenly'
+    }}>
+        <li>
           <Link to="/">Home</Link>
-        </NavItem>
-        <NavItem>
+        </li>
+        <li>
           <Link to="/contact">Contact</Link>
-        </NavItem>
-        <NavItem>
+        </li>
+        <li>
           <Link to="/projects">Projects</Link>
-        </NavItem>
-      </Nav>
-    </Navbar>
+        </li>
+        <li>
+          <Link to="/resume">Resume</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+    </ul>
   </div>
 );
 
-export default NavBar;
+export default Menu;

@@ -1,53 +1,53 @@
-import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Button, Row, Col } from 'reactstrap';
+import React, { useState } from 'react';
 
-import '../styles/contact.css';
+// import '../styles/contact.css';
+import Layout from './layout';
 
 const encode = data =>
   Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
 
-class Contact extends Component {
-  constructor(props) {
-    super(props);
+const ContactPage = () => (
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      email: '',
-      firstName: '',
-      lastName: '',
-      message: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.sendMail = this.sendMail.bind(this);
-  }
+  //   this.state = {
+  //     email: '',
+  //     firstName: '',
+  //     lastName: '',
+  //     message: ''
+  //   };
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  //   this.sendMail = this.sendMail.bind(this);
+  // }
+  // const [email, firstName, lastName, message] = useState('')
 
-  sendMail() {
-    fetch('/', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state })
-    })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  }
+  // sendMail() {
+  //   fetch('/', {
+  //     method: 'POST',
+  //     mode: 'no-cors',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({ 'form-name': 'contact', ...this.state })
+  //   })
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err));
+  // }
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+  // handleChange(e) {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.sendMail();
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   this.sendMail();
+  // }
 
-  render() {
-    const { firstName, lastName, email, message } = this.state;
-    return (
-      <div id="Contact">
-        <Form
+    // const { firstName, lastName, email, message } = this.state;
+    <Layout>
+<div id="Contact">
+        {/* <Form
           // onSubmit={this.handleSubmit}
           name="contact"
           data-netlify="true"
@@ -112,10 +112,10 @@ class Contact extends Component {
             />
           </FormGroup>
           <Button type="submit">Send</Button>
-        </Form>
+        </Form> */}
       </div>
-    );
-  }
-}
+    </Layout>
+      
+  )
 
-export default Contact;
+export default ContactPage;
