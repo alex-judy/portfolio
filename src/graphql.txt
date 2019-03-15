@@ -1,0 +1,11 @@
+query GithubRepoReadme {
+  repository(owner:"alex-judy", name:"jarvis-bot") {
+    
+    	object(expression: "master:README.md") {
+      id
+      ... on Blob {
+        text
+      }
+  	}
+  }
+}
