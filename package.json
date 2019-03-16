@@ -47,5 +47,8 @@
   },
   "bugs": {
     "url": "https://github.com/alex-judy/portfolio-main/issues"
+  },
+  "resolutions": {
+    "graphql": "^14.1.0"
   }
 }
