@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -15,7 +14,7 @@ const ContactPage = () => (
       Feel free to reach out to me and I'll try to get back to you as soon as
       possible!
     </p>
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" netlify="true" netlify-honeypot="bot-field" hidden>
       <label>
         Email: <input type="email" />
       </label>
@@ -29,13 +28,12 @@ const ContactPage = () => (
       </label>
       <br />
       <br />
-      <textarea name="message"></textarea>
+      <textarea name="message" />
       <br />
       <br />
       <input type="submit" />
     </form>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
-    <Link to="/">Go to home</Link>
   </Layout>
 )
 
