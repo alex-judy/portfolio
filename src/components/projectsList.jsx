@@ -32,6 +32,7 @@ function ProjectsList() {
               alignItems: 'center',
             }}
           >
+            <span dangerouslySetInnerHTML={{__html: repository.image.text}} />
             <Image src={repository.image.text} alt={repository.image.alt} />
           </div>
           <p style={{ justifyContent: 'center' }}>{repository.name}</p>

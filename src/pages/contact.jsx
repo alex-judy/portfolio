@@ -14,7 +14,7 @@ const ContactPage = () => (
       Feel free to reach out to me and I'll try to get back to you as soon as
       possible!
     </p>
-    <form name="contact" netlify="true" netlify-honeypot="bot-field" hidden>
+    <form name="contact" netlify="true">
       <label>
         Email: <input type="email" />
       </label>

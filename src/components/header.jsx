@@ -2,6 +2,8 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Menu from './menu'
+
 const Header = ({ siteTitle }) => (
   <div
     style={{
@@ -9,6 +11,7 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
+    <Menu />
     <div
       style={{
         margin: `0 auto`,

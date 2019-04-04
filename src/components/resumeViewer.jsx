@@ -18,15 +18,19 @@ function ResumeViewer() {
       render={data => (
         <div height="100%">
           <a href={data.allFile.edges[0].node.publicURL} download="Resume.pdf">
-            Download
+            <div>Resume</div>
           </a>
-          <iframe
+          {/* <iframe
             src={data.allFile.edges[0].node.publicURL}
-            width="100%"
+            style={{
+              height: '2200rem',
+              width: '100%',
+              title: 'resume-iframe',
+              frameBorder: '0',
+              overflow: 'auto',
+            }}
             title="resume-iframe"
-            frameBorder="0"
-            overflow="auto"
-          />
+          /> */}
         </div>
       )}
     />

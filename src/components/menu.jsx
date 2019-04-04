@@ -1,38 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import { FaBars } from 'react-icons/fa'
 
-const Menu = () => (
-  <div
-    id="NavBar"
-    style={{
-      background: '#f4f4f4',
-      paddingTop: '10px',
-    }}
-  >
-    <ul
+function Menu() {
+  let [collapsed, setCollapsed] = useState(false)
+
+  function onNavClick() {
+    setCollapsed((collapsed = !collapsed))
+  }
+
+  return (
+    <div
+      id="NavBar"
       style={{
-        listStyle: 'none',
         display: 'flex',
-        justifyContent: 'space-evenly',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
       }}
     >
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
-      </li>
-      <li>
-        <Link to="/projects">Projects</Link>
-      </li>
-      <li>
-        <Link to="/resume">Resume</Link>
-      </li>
-      <li>
-        <Link to="/blog">Blog</Link>
-      </li>
-    </ul>
-  </div>
-)
+      <button
+        style={{
+          background: 'none',
+          border: 'none',
+          outline: 'none',
+          position: 'absolute',
+        }}
+        onClick={() => onNavClick()}
+      >
+        <span>
+          <FaBars />
+        </span>
+      </button>
+      <div
+        style={{
+          display: !collapsed ? 'none' : '',
+          position: 'absolute',
+        }}
+      >
+        <ul
+          style={{
+            display: 'flex',
+            listStyle: 'none',
+            justifyContent: 'space-evenly',
+            flexDirection: 'column',
+            background: 'darkgray',
+            fontWeight: 'bold',
+          }}
+        >
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+}
 
 export default Menu

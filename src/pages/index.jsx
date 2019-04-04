@@ -1,8 +1,8 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
+import ResumeViewer from '../components/resumeViewer'
 
 const IndexPage = () => (
   <Layout>
@@ -17,9 +17,7 @@ const IndexPage = () => (
       solutions to common problems in my spare time to help automate daily tasks
       and fill in gaps that I find in applications.
     </p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <ResumeViewer />
   </Layout>
 )
 
