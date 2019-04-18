@@ -19,7 +19,6 @@ function Menu() {
     align-items: flex-start;
     position: relative;
     padding: 10px;
-    align-items: center;
   `
 
   const MenuToggle = styled.button`
@@ -30,7 +29,7 @@ function Menu() {
 
   const MenuItemsListContainer = styled.div`
     position: absolute;
-    margin-left: 20%;
+    margin-left: 20px;
   `
 
   const MenuItemsList = styled.ul`

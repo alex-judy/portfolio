@@ -14,23 +14,24 @@ const ContactPage = () => (
       Feel free to reach out to me and I'll try to get back to you as soon as
       possible!
     </p>
-    <form name="contact" netlify="true">
+    <form
+      name="contact"
+      netlify="true"
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}
+    >
       <label>
         Email: <input type="email" />
       </label>
-      <br />
-      <br />
       <label>
         FirstName: <input type="text" />
       </label>
       <label>
         LastName: <input type="text" />
       </label>
-      <br />
-      <br />
       <textarea name="message" />
-      <br />
-      <br />
       <input type="submit" />
     </form>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />

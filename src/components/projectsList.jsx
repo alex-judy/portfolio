@@ -21,7 +21,12 @@ function ProjectsList() {
       return (
         <div
           key={repository.url}
-          style={{ paddingBottom: '5rem', width: '100%' }}
+          style={{
+            paddingBottom: '5rem',
+            width: '100%',
+            // display: 'flex',
+            // flexWrap: 'wrap',
+          }}
         >
           <div
             style={{
