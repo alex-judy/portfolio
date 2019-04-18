@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
 
 import useComponentVisible from '../hooks/useComponentVisible'
+import ResumeViewer from '../components/resumeViewer'
 
 function Menu() {
   const {
@@ -16,9 +17,9 @@ function Menu() {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: absolute;
-    height: 100%;
-    padding-bottom: 10px;
+    position: relative;
+    padding: 10px;
+    align-items: center;
   `
 
   const MenuToggle = styled.button`
@@ -27,39 +28,46 @@ function Menu() {
     outline: none;
   `
 
-  const MenuItemsListContainer = styled.div``
+  const MenuItemsListContainer = styled.div`
+    position: absolute;
+    margin-left: 20%;
+  `
 
   const MenuItemsList = styled.ul`
     list-style: none;
-    justify-content: space-evenly;
-    flex-direction: column;
-    background: darkgray;
   `
   const MenuItem = styled.li`
-    fontweight: bold;
-    color: black;
+    font-size: 110%;
+    font-weight: bold;
+  `
+
+  const MenuLink = styled(Link)`
+    color: white;
   `
 
   return (
     <Container id="NavBar">
       <MenuToggle onClick={() => setIsComponentVisible(!isComponentVisible)}>
         <span>
-          <FaBars />
+          <FaBars size={35} style={{ color: 'white' }} />
         </span>
       </MenuToggle>
       {isComponentVisible && (
         <MenuItemsListContainer ref={ref}>
           <MenuItemsList id="MenuList">
             <MenuItem>
-              <Link to="/">Home</Link>
+              <MenuLink to="/">Home</MenuLink>
             </MenuItem>
             <MenuItem>
-              <Link to="/contact">Contact</Link>
+              <MenuLink to="/contact">Contact</MenuLink>
             </MenuItem>
             <MenuItem>
-              <Link to="/projects">Projects</Link>
+              <MenuLink to="/projects">Projects</MenuLink>
             </MenuItem>
-          </MenuItemsList>{' '}
+            <MenuItem>
+              <ResumeViewer style={{ color: 'white' }} />
+            </MenuItem>
+          </MenuItemsList>
         </MenuItemsListContainer>
       )}
     </Container>

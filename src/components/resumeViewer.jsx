@@ -16,8 +16,12 @@ function ResumeViewer() {
         }
       `}
       render={data => (
-        <div height="100%">
-          <a href={data.allFile.edges[0].node.publicURL} download="Resume.pdf">
+        <div>
+          <a
+            href={data.allFile.edges[0].node.publicURL}
+            download="Resume.pdf"
+            style={{ color: 'white' }}
+          >
             <div>Resume</div>
           </a>
         </div>

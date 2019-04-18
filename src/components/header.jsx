@@ -7,8 +7,12 @@ import Menu from './menu'
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: `rebeccapurple`,
+      background: `#495159`,
       marginBottom: `1.45rem`,
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      textAlign: 'center',
     }}
   >
     <Menu />
@@ -27,7 +31,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          {`< ${siteTitle} />`}
         </Link>
       </h1>
     </div>
