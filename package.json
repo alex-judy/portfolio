@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Alex Judy <alex.rjudy@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.1.35",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.3.23",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -14,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sharp": "^2.0.29",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-source-graphql": "^2.0.15",
     "gatsby-transformer-remark": "^2.3.4",
@@ -22,7 +24,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.5.0"
+    "react-icons": "^3.5.0",
+    "styled-components": "^4.2.0"
   },
   "keywords": [
     "gatsby"

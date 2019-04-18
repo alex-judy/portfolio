@@ -1,8 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Image from '../components/image'
-
 function ProjectsList() {
   function displayProjects(repositories) {
     return repositories.map(repository => {
@@ -32,18 +30,18 @@ function ProjectsList() {
               alignItems: 'center',
             }}
           >
-            <span dangerouslySetInnerHTML={{__html: repository.image.text}} />
-            <Image src={repository.image.text} alt={repository.image.alt} />
+            <span dangerouslySetInnerHTML={{ __html: repository.image.text }} />
           </div>
           <p style={{ justifyContent: 'center' }}>{repository.name}</p>
           <p>{repository.readme.text}</p>
-          <a href={repository.url}>{repository.url}</a>
+          <a href={repository.url}>Visit Project</a>
         </div>
       )
     })
   }
   return (
     <StaticQuery
+      // TODO: Change Github repository icons and rename. Handle null if icon doesnt exist.
       query={graphql`
         query GithubRepoQuery {
           github {
@@ -62,12 +60,28 @@ function ProjectsList() {
                     id
                     ... on GitHub_Blob {
                       text
+                      oid
+                    }
+                  }
+                  image2: object(expression: "master:icon2.svg") {
+                    id
+                    ... on GitHub_Blob {
+                      text
+                      oid
+                    }
+                  }
+                  image3: object(expression: "master:icon3.svg") {
+                    id
+                    ... on GitHub_Blob {
+                      text
+                      oid
                     }
                   }
                   readme: object(expression: "master:README.md") {
                     id
                     ... on GitHub_Blob {
                       text
+                      oid
                     }
                   }
                 }
