@@ -3,24 +3,14 @@ import { Link } from 'gatsby'
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
 
+import useComponentVisible from '../hooks/useComponentVisible'
+
 function Menu() {
-  let [collapsed, setCollapsed] = useState(false)
-
-  useEffect(() => {
-    let list = document.getElementById('MenuList')
-
-    document.addEventListener('keypress', e => {
-      if (e.key === 'Escape' && !collapsed) {
-        console.log(e)
-        setCollapsed((collapsed = !collapsed))
-        console.log('Collapsed: ' + collapsed)
-      }
-    })
-
-    list.addEventListener('mouseout', e => {
-      console.log(e)
-    })
-  })
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible,
+  } = useComponentVisible(false)
 
   const Container = styled.div`
     display: flex;
@@ -37,9 +27,7 @@ function Menu() {
     outline: none;
   `
 
-  const MenuItemsListContainer = styled.div`
-    visibility: ${!collapsed ? 'hidden' : ''};
-  `
+  const MenuItemsListContainer = styled.div``
 
   const MenuItemsList = styled.ul`
     list-style: none;
@@ -54,24 +42,26 @@ function Menu() {
 
   return (
     <Container id="NavBar">
-      <MenuToggle onClick={() => setCollapsed((collapsed = !collapsed))}>
+      <MenuToggle onClick={() => setIsComponentVisible(!isComponentVisible)}>
         <span>
           <FaBars />
         </span>
       </MenuToggle>
-      <MenuItemsListContainer>
-        <MenuItemsList id="MenuList">
-          <MenuItem>
-            <Link to="/">Home</Link>
-          </MenuItem>
-          <MenuItem>
-            <Link to="/contact">Contact</Link>
-          </MenuItem>
-          <MenuItem>
-            <Link to="/projects">Projects</Link>
-          </MenuItem>
-        </MenuItemsList>
-      </MenuItemsListContainer>
+      {isComponentVisible && (
+        <MenuItemsListContainer ref={ref}>
+          <MenuItemsList id="MenuList">
+            <MenuItem>
+              <Link to="/">Home</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/contact">Contact</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/projects">Projects</Link>
+            </MenuItem>
+          </MenuItemsList>{' '}
+        </MenuItemsListContainer>
+      )}
     </Container>
   )
 }
