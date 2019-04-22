@@ -7,12 +7,13 @@ import Menu from './menu'
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: `#495159`,
+      backgroundColor: `transparent`,
       marginBottom: `1.45rem`,
       display: 'flex',
       justifyContent: 'center',
-      flexDirection: 'column',
+      flexDirection: 'row',
       textAlign: 'center',
+      alignItems: 'flex-start',
     }}
   >
     <Menu />
@@ -27,7 +28,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `#495159`,
             textDecoration: `none`,
           }}
         >

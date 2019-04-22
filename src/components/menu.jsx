@@ -15,7 +15,7 @@ function Menu() {
 
   const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     position: relative;
     padding: 10px;
@@ -30,11 +30,15 @@ function Menu() {
 
   const MenuItemsListContainer = styled.div`
     position: absolute;
-    margin-left: 20px;
+    margin: 20px;
+    padding: 10px;
+    z-index: 1;
+    background-color: #495159;
   `
 
   const MenuItemsList = styled.ul`
     list-style: none;
+    margin: 20px;
   `
 
   const MenuLink = styled(Link)`
@@ -57,7 +61,7 @@ function Menu() {
     <Container id="NavBar">
       <MenuToggle onClick={() => setIsComponentVisible(!isComponentVisible)}>
         <span>
-          <FaBars size={35} style={{ color: 'white' }} />
+          <FaBars size={35} style={{ color: '#495159' }} />
         </span>
       </MenuToggle>
       {isComponentVisible && (
