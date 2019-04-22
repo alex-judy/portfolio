@@ -25,6 +25,7 @@ function Menu() {
     background: none;
     border: none;
     outline: none;
+    z-index: 1;
   `
 
   const MenuItemsListContainer = styled.div`
@@ -35,13 +36,21 @@ function Menu() {
   const MenuItemsList = styled.ul`
     list-style: none;
   `
-  const MenuItem = styled.li`
-    font-size: 110%;
-    font-weight: bold;
-  `
 
   const MenuLink = styled(Link)`
     color: white;
+  `
+
+  const MenuItem = styled.li`
+    font-size: 110%;
+    font-weight: bold;
+    & > a {
+      transition: color 0.2s;
+      color: white;
+    }
+    &:hover a {
+      color: #62929e;
+    }
   `
 
   return (
@@ -64,7 +73,7 @@ function Menu() {
               <MenuLink to="/projects">Projects</MenuLink>
             </MenuItem>
             <MenuItem>
-              <ResumeViewer style={{ color: 'white' }} />
+              <ResumeViewer />
             </MenuItem>
           </MenuItemsList>
         </MenuItemsListContainer>

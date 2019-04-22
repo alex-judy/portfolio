@@ -1,6 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+import ProjectCard from '../components/projectCard'
+
 function ProjectsList() {
   function displayProjects(repositories) {
     return repositories.map(repository => {
@@ -10,14 +12,25 @@ function ProjectsList() {
           text: 'README does not exist in this repository yet',
         }
       }
-      if (!repository.image) {
-        repository.image = {
+      if (!repository.image1) {
+        repository.image1 = {
           id: '',
           text: '',
           alt: 'Image does not exist in this repository yet.',
         }
       }
-
+      if (!repository.image2) {
+        repository.image2 = {
+          id: '',
+          text: '',
+        }
+      }
+      if (!repository.image3) {
+        repository.image3 = {
+          id: '',
+          text: '',
+        }
+      }
       return (
         <div
           key={repository.url}
@@ -35,12 +48,29 @@ function ProjectsList() {
               alignItems: 'center',
             }}
           >
-            <span dangerouslySetInnerHTML={{ __html: repository.image.text }} />
+            <span
+              dangerouslySetInnerHTML={{ __html: repository.image1.text }}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: repository.image2.text }}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: repository.image3.text }}
+            />
           </div>
           <p style={{ justifyContent: 'center' }}>{repository.name}</p>
           <p>{repository.readme.text}</p>
           <a href={repository.url}>Visit Project</a>
         </div>
+        // <ProjectCard
+        //   images={[
+        //     repository.image1.text,
+        //     repository.image2.text,
+        //     repository.image3.text,
+        //   ]}
+        //   name={repository.readme.text}
+        //   description={repository.url}
+        // />
       )
     })
   }
@@ -61,7 +91,7 @@ function ProjectsList() {
                 nodes {
                   name
                   url
-                  image: object(expression: "master:icon.svg") {
+                  image1: object(expression: "master:icon1.svg") {
                     id
                     ... on GitHub_Blob {
                       text
