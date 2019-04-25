@@ -22,12 +22,14 @@ function Layout({ children }) {
     margin: 30px;
     @media only screen and (max-width: 1520px) {
       display: flex;
+      position: absolute;
       top: initial;
       float: initial;
-      bottom: 10px;
-      border: 3px solid #8ac007;
+      bottom: 0;
       width: 100%;
+      align-items: evenly-spaced;
       justify-content: space-between;
+      margin: auto;
     }
   `
 
@@ -61,17 +63,17 @@ function Layout({ children }) {
           <SocialGroup>
             <SocialIcon>
               <a href="https://github.com/alex-judy">
-                <FaGithub size={75} />
+                <FaGithub size={65} />
               </a>
             </SocialIcon>
             <SocialIcon>
               <a href="https://gitlab.com/alex-judy?nav_source=navbar">
-                <FaGitlab size={75} />
+                <FaGitlab size={65} />
               </a>
             </SocialIcon>
             <SocialIcon>
               <a href="https://www.linkedin.com/in/alex-judy/">
-                <FaLinkedin size={75} />
+                <FaLinkedin size={65} />
               </a>
             </SocialIcon>
           </SocialGroup>

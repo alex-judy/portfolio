@@ -61,26 +61,28 @@ function ProjectsList() {
           <ImageContainer>
             <div
               style={{
-                maxWidth: `300px`,
+                maxWidth: `33%`,
               }}
               dangerouslySetInnerHTML={{ __html: repository.image1.text }}
             />
             <div
               style={{
-                maxWidth: `300px`,
+                maxWidth: `33%`,
               }}
               dangerouslySetInnerHTML={{ __html: repository.image2.text }}
             />
             <div
               style={{
-                maxWidth: `300px`,
+                maxWidth: `33%`,
               }}
               dangerouslySetInnerHTML={{ __html: repository.image3.text }}
             />
           </ImageContainer>
           <p style={{ justifyContent: 'center' }}>{repository.name}</p>
           <p>{repository.readme.text}</p>
-          <a href={repository.url}>Visit Project</a>
+          <a href={repository.url} style={{ borderBottom: '1px solid black' }}>
+            Visit Project
+          </a>
         </div>
       )
     })
