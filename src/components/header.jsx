@@ -6,14 +6,17 @@ import Menu from './menu'
 
 const Header = ({ siteTitle }) => (
   <div
+    id="NavBar"
     style={{
-      backgroundColor: `transparent`,
+      backgroundColor: `#495159`,
       marginBottom: `1.45rem`,
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'row',
       textAlign: 'center',
       alignItems: 'flex-start',
+      position: 'fixed',
+      width: '100%',
     }}
   >
     <Menu />
@@ -28,7 +31,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `#495159`,
+            color: `whitesmoke`,
             textDecoration: `none`,
           }}
         >

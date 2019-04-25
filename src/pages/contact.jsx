@@ -1,4 +1,5 @@
 import React from 'react'
+// import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -22,16 +23,14 @@ const ContactPage = () => (
         flexWrap: 'wrap',
       }}
     >
-      <label>
-        Email: <input type="email" />
-      </label>
-      <label>
-        FirstName: <input type="text" />
-      </label>
-      <label>
-        LastName: <input type="text" />
-      </label>
-      <textarea name="message" />
+      <label>Email</label>
+      <input id="email" name="email" type="email" />
+      <label htmlFor="firstName">FirstName</label>
+      <input id="firstName" name="firstName" type="text" />
+      <label htmlFor="lastName">LastName</label>
+      <input id="lastName" name="lastName" type="text" />
+      <label htmlFor="message">Message</label>
+      <textarea id="message" name="message" />
       <input type="submit" />
     </form>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />

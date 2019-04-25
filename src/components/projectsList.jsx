@@ -1,7 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 
-import ProjectCard from '../components/projectCard'
+// import ProjectCard from '../components/projectCard'
 
 function ProjectsList() {
   function displayProjects(repositories) {
@@ -9,14 +10,13 @@ function ProjectsList() {
       if (!repository.readme) {
         repository.readme = {
           id: '',
-          text: 'README does not exist in this repository yet',
+          text: 'README does not exist in this repository yet.',
         }
       }
       if (!repository.image1) {
         repository.image1 = {
           id: '',
           text: '',
-          alt: 'Image does not exist in this repository yet.',
         }
       }
       if (!repository.image2) {
@@ -31,46 +31,57 @@ function ProjectsList() {
           text: '',
         }
       }
+
+      const ImageContainer = styled.div`
+        max-width: 100%;
+        margin-bottom: 1.45rem;
+        display: flex;
+        justify-content: space-evenly;
+        & > div {
+          width: 300px;
+          height: ${repository.image1.text === '' ? 20 : 300};
+        }
+      `
       return (
+        // <ProjectCard
+        //   id={repository.id}
+        //   images={[repository.image1, repository.image2, repository.image3]}
+        //   name={repository.name}
+        //   description={repository.readme.text}
+        //   url={repository.url}
+        // />
         <div
           key={repository.url}
           style={{
             paddingBottom: '5rem',
             width: '100%',
-            // display: 'flex',
-            // flexWrap: 'wrap',
+            boxSizing: 'initial',
           }}
         >
-          <div
-            style={{
-              maxWidth: `300px`,
-              marginBottom: `1.45rem`,
-              alignItems: 'center',
-            }}
-          >
-            <span
+          <ImageContainer>
+            <div
+              style={{
+                maxWidth: `300px`,
+              }}
               dangerouslySetInnerHTML={{ __html: repository.image1.text }}
             />
-            <span
+            <div
+              style={{
+                maxWidth: `300px`,
+              }}
               dangerouslySetInnerHTML={{ __html: repository.image2.text }}
             />
-            <span
+            <div
+              style={{
+                maxWidth: `300px`,
+              }}
               dangerouslySetInnerHTML={{ __html: repository.image3.text }}
             />
-          </div>
+          </ImageContainer>
           <p style={{ justifyContent: 'center' }}>{repository.name}</p>
           <p>{repository.readme.text}</p>
           <a href={repository.url}>Visit Project</a>
         </div>
-        // <ProjectCard
-        //   images={[
-        //     repository.image1.text,
-        //     repository.image2.text,
-        //     repository.image3.text,
-        //   ]}
-        //   name={repository.readme.text}
-        //   description={repository.url}
-        // />
       )
     })
   }
@@ -89,6 +100,7 @@ function ProjectsList() {
                 first: 100
               ) {
                 nodes {
+                  id
                   name
                   url
                   image1: object(expression: "master:icon1.svg") {
@@ -126,7 +138,7 @@ function ProjectsList() {
         }
       `}
       render={data => {
-        // Catching errors since I am hitting an external GraphQl API
+        // Catching errors since I am getting data from an external GraphQl API
         try {
           return (
             <div

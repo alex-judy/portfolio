@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { FaBars } from 'react-icons/fa'
 import styled from 'styled-components'
@@ -12,6 +12,12 @@ function Menu() {
     isComponentVisible,
     setIsComponentVisible,
   } = useComponentVisible(false)
+  let [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    let el = document.getElementById('MenuToggle')
+    setHeight((height = el.offsetHeight))
+  })
 
   const Container = styled.div`
     display: flex;
@@ -19,6 +25,7 @@ function Menu() {
     align-items: flex-start;
     position: relative;
     padding: 10px;
+    margin-top: 0.5%;
   `
 
   const MenuToggle = styled.button`
@@ -30,19 +37,18 @@ function Menu() {
 
   const MenuItemsListContainer = styled.div`
     position: absolute;
-    margin: 20px;
+    margin-top: ${height}px;
+    margin-left: 20px;
     padding: 10px;
     z-index: 1;
-    background-color: #495159;
+    background-color: whitesmoke;
+    box-shadow: 0 10px 10px #666;
+    border-radius: 10px;
   `
 
   const MenuItemsList = styled.ul`
     list-style: none;
-    margin: 20px;
-  `
-
-  const MenuLink = styled(Link)`
-    color: white;
+    margin: 10px;
   `
 
   const MenuItem = styled.li`
@@ -50,31 +56,34 @@ function Menu() {
     font-weight: bold;
     & > a {
       transition: color 0.2s;
-      color: white;
+      color: black;
     }
-    &:hover a {
+    &:hover > a {
       color: #62929e;
     }
   `
 
   return (
-    <Container id="NavBar">
-      <MenuToggle onClick={() => setIsComponentVisible(!isComponentVisible)}>
+    <Container>
+      <MenuToggle
+        id="MenuToggle"
+        onClick={() => setIsComponentVisible(!isComponentVisible)}
+      >
         <span>
-          <FaBars size={35} style={{ color: '#495159' }} />
+          <FaBars size={35} style={{ color: 'whitesmoke' }} />
         </span>
       </MenuToggle>
       {isComponentVisible && (
         <MenuItemsListContainer ref={ref}>
           <MenuItemsList id="MenuList">
             <MenuItem>
-              <MenuLink to="/">Home</MenuLink>
+              <Link to="/">Home</Link>
             </MenuItem>
             <MenuItem>
-              <MenuLink to="/contact">Contact</MenuLink>
+              <Link to="/contact">Contact</Link>
             </MenuItem>
             <MenuItem>
-              <MenuLink to="/projects">Projects</MenuLink>
+              <Link to="/projects">Projects</Link>
             </MenuItem>
             <MenuItem>
               <ResumeViewer />
