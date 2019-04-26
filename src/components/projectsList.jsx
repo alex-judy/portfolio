@@ -43,6 +43,7 @@ function ProjectsList() {
         }
       `
       return (
+        // TODO: Fix project card component to move logic out of this.
         // <ProjectCard
         //   id={repository.id}
         //   images={[repository.image1, repository.image2, repository.image3]}
@@ -78,7 +79,7 @@ function ProjectsList() {
               dangerouslySetInnerHTML={{ __html: repository.image3.text }}
             />
           </ImageContainer>
-          <p style={{ justifyContent: 'center' }}>{repository.name}</p>
+          <h4 style={{ justifyContent: 'center' }}>{repository.name}</h4>
           <p>{repository.readme.text}</p>
           <a href={repository.url} style={{ borderBottom: '1px solid black' }}>
             Visit Project

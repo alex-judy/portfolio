@@ -60,6 +60,7 @@ function Menu() {
     }
     &:hover > a {
       color: #62929e;
+      background-color: whitesmoke;
     }
   `
 
@@ -67,6 +68,8 @@ function Menu() {
     <Container>
       <MenuToggle
         id="MenuToggle"
+        name="MenuToggle"
+        aria-label="Menu toggle"
         onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
         <span>

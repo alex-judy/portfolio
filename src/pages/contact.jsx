@@ -14,11 +14,11 @@ const ContactPage = () => (
       title="Contact"
       keywords={[`software`, `development`, `react`, `gatsby`]}
     />
-    <h1>Contact Me</h1>
-    <p>
+    <h1 style={{ textAlign: 'center' }}>Contact Me</h1>
+    <h4 style={{ textAlign: 'center' }}>
       Feel free to reach out to me and I'll try to get back to you as soon as
       possible!
-    </p>
+    </h4>
     <form
       name="contact"
       netlify="true"
@@ -30,6 +30,7 @@ const ContactPage = () => (
         marginTop: '5%',
         maxWidth: '100%',
         textAlign: 'left',
+        padding: '0 20% 0 20%',
       }}
     >
       <FormGroup>
@@ -84,10 +85,13 @@ const ContactPage = () => (
       <input
         type="submit"
         style={{
-          marginTop: '5%',
-          backgroundColor: '#495159',
+          margin: '5% 30% 0 30%',
+          backgroundColor: 'black',
           color: 'white',
           maxWidth: '100%',
+          borderRadius: 30,
+          border: 'none',
+          outline: 0,
         }}
       />
     </form>

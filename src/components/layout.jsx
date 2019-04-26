@@ -20,19 +20,27 @@ function Layout({ children }) {
     top: 50%;
     float: left;
     margin: 30px;
-    @media only screen and (max-width: 1520px) {
-      display: flex;
-      position: absolute;
-      top: initial;
-      float: initial;
-      bottom: 0;
-      width: 100%;
-      align-items: evenly-spaced;
-      justify-content: space-between;
-      margin: auto;
-    }
   `
+  // TODO: Complete media query for mobile devices. May need to move icons to top of page.
+  // @media only screen and (max-width: 1520px) {
+  //   display: flex;
+  //   position: absolute;
+  //   top: initial;
+  //   float: initial;
+  //   bottom: 0;
+  //   max-width: 960px;
+  //   width: 100%;
+  //   align-items: evenly-spaced;
+  //   justify-content: center;
+  //   margin: 0px auto;
+  //   &:first-child > div {
+  //     margin-right: auto;
+  //   }
 
+  //   &:last-child > div {
+  //     margin-left: auto;
+  //   }
+  // }
   const SocialIcon = styled.div`
     margin-top: 30px;
     &:hover > a:first-child {
@@ -60,23 +68,6 @@ function Layout({ children }) {
       `}
       render={data => (
         <div>
-          <SocialGroup>
-            <SocialIcon>
-              <a href="https://github.com/alex-judy">
-                <FaGithub size={65} />
-              </a>
-            </SocialIcon>
-            <SocialIcon>
-              <a href="https://gitlab.com/alex-judy?nav_source=navbar">
-                <FaGitlab size={65} />
-              </a>
-            </SocialIcon>
-            <SocialIcon>
-              <a href="https://www.linkedin.com/in/alex-judy/">
-                <FaLinkedin size={65} />
-              </a>
-            </SocialIcon>
-          </SocialGroup>
           <Header siteTitle={data.site.siteMetadata.title} />
           <div
             style={{
@@ -88,6 +79,32 @@ function Layout({ children }) {
           >
             {children}
           </div>
+          <SocialGroup>
+            <SocialIcon>
+              <a
+                href="https://github.com/alex-judy"
+                aria-label="Github Profile"
+              >
+                <FaGithub size={60} />
+              </a>
+            </SocialIcon>
+            <SocialIcon>
+              <a
+                href="https://gitlab.com/alex-judy"
+                aria-label="Gitlab Profile"
+              >
+                <FaGitlab size={60} />
+              </a>
+            </SocialIcon>
+            <SocialIcon>
+              <a
+                href="https://www.linkedin.com/in/alex-judy"
+                aria-label="LinkedIn Profile"
+              >
+                <FaLinkedin size={60} />
+              </a>
+            </SocialIcon>
+          </SocialGroup>
         </div>
       )}
     />

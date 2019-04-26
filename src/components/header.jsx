@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
       flexDirection: 'row',
       textAlign: 'center',
       alignItems: 'flex-start',
-      position: 'fixed',
+      position: 'absolute',
       width: '100%',
     }}
   >
