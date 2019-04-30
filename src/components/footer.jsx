@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
-import { Row } from 'reactstrap';
+import React from 'react'
 
-class Footer extends Component {
-  state = {};
+const Footer = () => (
+  <h6
+    style={{
+      position: 'relative',
+      bottom: 0,
+      width: '100%',
+      textAlign: 'center',
+      marginTop: 15,
+      opacity: 0.5,
+      height: '95%',
+    }}
+  >
+    Built by Alex Judy using Gatsby and React &copy;{new Date().getFullYear()}
+  </h6>
+)
 
-  render() {
-    return <Row style={{ textAlign: 'center' }} />;
-  }
-}
-
-export default Footer;
+export default Footer
