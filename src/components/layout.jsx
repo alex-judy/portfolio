@@ -1,46 +1,42 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { FaGithub, FaGitlab, FaLinkedin } from 'react-icons/fa'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 import './layout.css'
 
 function Layout({ children }) {
-  let [height, setHeight] = useState(0)
-
-  useEffect(() => {
-    let el = document.getElementById('NavBar')
-    setHeight((height = el.offsetHeight))
-  })
-
   const SocialGroup = styled.div`
     position: fixed;
     top: 50%;
     float: left;
     margin: 30px;
-  `
-  // TODO: Complete media query for mobile devices. May need to move icons to top of page.
-  // @media only screen and (max-width: 1520px) {
-  //   display: flex;
-  //   position: absolute;
-  //   top: initial;
-  //   float: initial;
-  //   bottom: 0;
-  //   max-width: 960px;
-  //   width: 100%;
-  //   align-items: evenly-spaced;
-  //   justify-content: center;
-  //   margin: 0px auto;
-  //   &:first-child > div {
-  //     margin-right: auto;
-  //   }
 
-  //   &:last-child > div {
-  //     margin-left: auto;
-  //   }
-  // }
+    @media only screen and (max-width: 1520px) {
+      display: flex;
+      position: relative;
+      top: initial;
+      float: initial;
+      bottom: 0;
+      max-width: 960px;
+      width: 100%;
+      align-items: evenly-spaced;
+      padding: 50px;
+      justify-content: center;
+      margin: 0px auto;
+      &:first-child > div {
+        margin-right: auto;
+      }
+
+      &:last-child > div {
+        margin-left: auto;
+      }
+    }
+  `
+
   const SocialIcon = styled.div`
     margin-top: 30px;
     &:hover > a:first-child {
@@ -74,7 +70,7 @@ function Layout({ children }) {
               margin: `0 auto`,
               maxWidth: 960,
               padding: ``,
-              paddingTop: height + 20,
+              paddingTop: 20,
             }}
           >
             {children}
@@ -105,6 +101,7 @@ function Layout({ children }) {
               </a>
             </SocialIcon>
           </SocialGroup>
+          <Footer />
         </div>
       )}
     />

@@ -73,7 +73,7 @@ function Menu() {
         onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
         <span>
-          <FaBars size={35} style={{ color: 'whitesmoke' }} />
+          <FaBars size={35} style={{ color: '#495159' }} />
         </span>
       </MenuToggle>
       {isComponentVisible && (

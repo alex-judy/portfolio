@@ -36,7 +36,6 @@ function ProjectsList() {
         max-width: 100%;
         margin-bottom: 1.45rem;
         display: flex;
-        justify-content: space-evenly;
         & > div {
           width: 300px;
           height: ${repository.image1.text === '' ? 20 : 300};
@@ -62,19 +61,28 @@ function ProjectsList() {
           <ImageContainer>
             <div
               style={{
+                padding: '5%',
                 maxWidth: `33%`,
+                maxHeight: '100%',
+                minWidth: '15%',
               }}
               dangerouslySetInnerHTML={{ __html: repository.image1.text }}
             />
             <div
               style={{
+                padding: '5%',
                 maxWidth: `33%`,
+                maxHeight: '100%',
+                minWidth: '15%',
               }}
               dangerouslySetInnerHTML={{ __html: repository.image2.text }}
             />
             <div
               style={{
+                padding: '5%',
                 maxWidth: `33%`,
+                maxHeight: '100%',
+                minWidth: '15%',
               }}
               dangerouslySetInnerHTML={{ __html: repository.image3.text }}
             />

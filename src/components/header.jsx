@@ -3,19 +3,19 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Menu from './menu'
+import './header.css'
 
 const Header = ({ siteTitle }) => (
   <div
     id="NavBar"
     style={{
-      backgroundColor: `#495159`,
+      backgroundColor: `transparent`,
       marginBottom: `1.45rem`,
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'row',
       textAlign: 'center',
       alignItems: 'flex-start',
-      position: 'absolute',
       width: '100%',
     }}
   >
@@ -27,15 +27,15 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 class="typewriter" style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `whitesmoke`,
+            color: `#495159`,
             textDecoration: `none`,
           }}
         >
-          {`< ${siteTitle} />`}
+          {`> ${siteTitle}`}
         </Link>
       </h1>
     </div>
