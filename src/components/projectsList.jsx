@@ -150,6 +150,7 @@ function ProjectsList() {
       `}
       render={data => {
         // Catching errors since I am getting data from an external GraphQl API
+        // TODO: Cache results in either local or session storage in order to grab data if github api is not available.
         try {
           return (
             <div

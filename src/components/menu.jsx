@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaFilePdf } from 'react-icons/fa'
 import styled from 'styled-components'
 
 import useComponentVisible from '../hooks/useComponentVisible'
@@ -90,6 +90,7 @@ function Menu() {
             </MenuItem>
             <MenuItem>
               <ResumeViewer />
+              <FaFilePdf />
             </MenuItem>
           </MenuItemsList>
         </MenuItemsListContainer>

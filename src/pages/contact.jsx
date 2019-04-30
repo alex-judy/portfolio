@@ -21,7 +21,9 @@ const ContactPage = () => (
     </h4>
     <form
       name="contact"
-      netlify="true"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       style={{
         display: 'flex',
         flexWrap: 'wrap',

@@ -19,7 +19,7 @@ const IndexPage = () => (
         alignContent: 'center',
       }}
     >
-      <h1 style={{ width: '100%', textAlign: 'center' }}>
+      <h1 style={{ width: '100%', textAlign: 'center', fontSize: '2.5rem' }}>
         Thanks for stopping by!
       </h1>
       <Gravatar
@@ -27,8 +27,8 @@ const IndexPage = () => (
         size={200}
         style={{ borderRadius: '50%' }}
       />
-      <p style={{ fontSize: 27 }}>
-        I am a software engineer and tinkerer living in Louisville, KY.
+      <p style={{ fontSize: '2.5rem', lineHeight: 'initial' }}>
+        I am a software engineer and hobbyist living in Louisville, KY.
         Currently employed with{' '}
         <a
           style={{ fontWeight: 'bold', color: '#62929e' }}
