@@ -28,8 +28,8 @@ const IndexPage = () => (
         style={{ borderRadius: '50%' }}
       />
       <p style={{ fontSize: '2.5rem', lineHeight: 'initial' }}>
-        I am a software engineer and hobbyist living in Louisville, KY.
-        Currently employed with{' '}
+        I am a software engineer living in Louisville, KY. Currently employed
+        with{' '}
         <a
           style={{ fontWeight: 'bold', color: '#62929e' }}
           href="https://hmbnet.com/"
