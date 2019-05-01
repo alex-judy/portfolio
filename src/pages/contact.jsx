@@ -20,8 +20,8 @@ const ContactPage = () => (
       possible!
     </h4>
     <form
-      name="contact"
-      method="post"
+      name="Contact"
+      method="POST"
       action="/success"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
@@ -36,6 +36,10 @@ const ContactPage = () => (
         padding: '0 20% 0 20%',
       }}
     >
+      <input type="hidden" name="form-name" value="Contact" />
+      <div hidden>
+        <input id="bot-field" name="bot-field" />
+      </div>
       <FormGroup>
         <label htmlFor="email" style={{ fontWeight: 'bold' }}>
           Email
