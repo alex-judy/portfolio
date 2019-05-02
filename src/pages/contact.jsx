@@ -8,12 +8,9 @@ const FormGroup = styled.div`
   margin: 10px;
 `
 
-const ContactPage = () => (
+export default () => (
   <Layout>
-    <SEO
-      title="Contact"
-      keywords={[`software`, `development`, `react`, `gatsby`]}
-    />
+    <SEO title="Contact" keywords={[`form`, `contact`, `react`, `gatsby`]} />
     <h1 style={{ textAlign: 'center' }}>Contact Me</h1>
     <h4 style={{ textAlign: 'center' }}>
       Feel free to reach out to me and I'll try to get back to you as soon as
@@ -88,7 +85,6 @@ const ContactPage = () => (
           }}
         />
       </FormGroup>
-
       <input
         type="submit"
         style={{
@@ -105,5 +101,3 @@ const ContactPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
 )
-
-export default ContactPage

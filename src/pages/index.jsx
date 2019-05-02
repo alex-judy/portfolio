@@ -1,14 +1,40 @@
 import React from 'react'
 import Gravatar from 'react-gravatar'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const IndexPage = () => (
+const Content = styled.p`
+  font-size: 2rem;
+  line-height: initial;
+  margin-top: 2rem;
+
+  @media only screen and (max-width: 355px) {
+    font-size: 1.5rem;
+  }
+`
+
+const Title = styled.h1`
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  @media only screen and (max-width: 355px) {
+    font-size: 1.75rem;
+  }
+`
+
+const Interests = styled.table`
+  text-align: left;
+  width: 100%;
+  margin-top: 2rem;
+`
+
+export default () => (
   <Layout>
     <SEO
       title="Home"
-      keywords={[`software`, `development`, `react`, `gatsby`]}
+      keywords={[`software`, `development`, `portfolio`, `react`, `gatsby`]}
     />
     <div
       style={{
@@ -19,15 +45,13 @@ const IndexPage = () => (
         alignContent: 'center',
       }}
     >
-      <h1 style={{ width: '100%', textAlign: 'center', fontSize: '2.5rem' }}>
-        Thanks for stopping by!
-      </h1>
+      <Title>Thanks for stopping by!</Title>
       <Gravatar
         email="alex.rjudy@gmail.com"
         size={200}
         style={{ borderRadius: '50%' }}
       />
-      <p style={{ fontSize: '2.5rem', lineHeight: 'initial' }}>
+      <Content>
         I am a software engineer living in Louisville, KY. Currently employed
         with{' '}
         <a
@@ -37,9 +61,20 @@ const IndexPage = () => (
           HMB
         </a>
         {', '}a software consultancy firm.
-      </p>
+      </Content>
+      {/* <Interests>
+        <h3>Interests</h3>
+        <tr>
+          <th>Recreational</th>
+        </tr>
+        <tr>
+          <td>Test</td>
+          <td>Test</td>
+          <td>Test</td>
+          <td>Test</td>
+          <td>Test</td>
+        </tr>
+      </Interests> */}
     </div>
   </Layout>
 )
-
-export default IndexPage

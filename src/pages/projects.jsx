@@ -3,10 +3,14 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ProjectsList from '../components/projectsList'
+import { defaultCipherList } from 'constants'
 
-const Projects = () => (
+export default () => (
   <Layout>
-    <SEO title="Projects" keywords={[]} />
+    <SEO
+      title="Projects"
+      keywords={[`projects`, `github`, `react`, `gatsby`]}
+    />
     <h1>Projects</h1>
     <p>
       These are what projects I am currently working on or have worked on. All
@@ -16,5 +20,3 @@ const Projects = () => (
     <ProjectsList />
   </Layout>
 )
-
-export default Projects

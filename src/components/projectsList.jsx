@@ -53,9 +53,13 @@ function ProjectsList() {
         <div
           key={repository.url}
           style={{
-            paddingBottom: '5rem',
+            padding: '5rem',
             width: '100%',
             boxSizing: 'initial',
+            boxShadow: '0 10px 10px #666',
+            margin: '1rem 0 1rem 0',
+            borderRadius: '10px',
+            backgroundColor: 'whitesmoke',
           }}
         >
           <ImageContainer>

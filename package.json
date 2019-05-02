@@ -1,8 +1,8 @@
 {
-  "name": "software-development-portfolio",
+  "name": "portfolio",
   "private": true,
   "description": "Personal portfolio site built on Gatsby and React.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Alex Judy <alex.rjudy@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -29,7 +29,9 @@
     "styled-components": "^4.2.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio",
+    "react"
   ],
   "license": "MIT",
   "scripts": {
