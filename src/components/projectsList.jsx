@@ -53,7 +53,7 @@ function ProjectsList() {
         <div
           key={repository.url}
           style={{
-            padding: '5rem',
+            paddingBottom: '5rem',
             width: '100%',
             boxSizing: 'initial',
             boxShadow: '0 10px 10px #666',
