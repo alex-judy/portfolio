@@ -41,6 +41,20 @@ function ProjectsList() {
           height: ${repository.image1.text === '' ? 20 : 300};
         }
       `
+
+      const Project = styled.div`
+        padding-bottom: 5rem;
+        width: 100%;
+        box-sizing: initial;
+        box-shadow: 0 10px 10px #666;
+        margin: 1rem 0 1rem 0;
+        borderradius: 10px;
+        backgroundcolor: whitesmoke;
+        @media only screen and (max-width: 1005px) {
+          box-shadow: none;
+        }
+      `
+
       return (
         // TODO: Fix project card component to move logic out of this.
         // <ProjectCard
@@ -50,18 +64,7 @@ function ProjectsList() {
         //   description={repository.readme.text}
         //   url={repository.url}
         // />
-        <div
-          key={repository.url}
-          style={{
-            paddingBottom: '5rem',
-            width: '100%',
-            boxSizing: 'initial',
-            boxShadow: '0 10px 10px #666',
-            margin: '1rem 0 1rem 0',
-            borderRadius: '10px',
-            backgroundColor: 'whitesmoke',
-          }}
-        >
+        <Project key={repository.url}>
           <ImageContainer>
             <div
               style={{
@@ -91,12 +94,17 @@ function ProjectsList() {
               dangerouslySetInnerHTML={{ __html: repository.image3.text }}
             />
           </ImageContainer>
-          <h4 style={{ justifyContent: 'center' }}>{repository.name}</h4>
-          <p>{repository.readme.text}</p>
-          <a href={repository.url} style={{ borderBottom: '1px solid black' }}>
-            Visit Project
-          </a>
-        </div>
+          <div style={{ width: '100%', padding: '10px' }}>
+            <h3 style={{ textAlign: 'center' }}>{repository.name}</h3>
+            <a
+              href={repository.url}
+              style={{ borderBottom: '1px solid black', textAlign: 'center' }}
+            >
+              Visit Project
+            </a>
+            <p>{repository.readme.text}</p>
+          </div>
+        </Project>
       )
     })
   }
