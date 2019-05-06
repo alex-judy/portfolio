@@ -45,7 +45,7 @@ function ProjectsList() {
       const Project = styled.div`
         padding-bottom: 5rem;
         width: 100%;
-        box-sizing: initial;
+        box-sizing: border-box;
         box-shadow: 0 10px 10px #666;
         margin: 1rem 0 1rem 0;
         borderradius: 10px;
