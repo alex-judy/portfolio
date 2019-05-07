@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import marked from 'marked'
 import { StaticQuery, graphql } from 'gatsby'
 
 // import ProjectCard from '../components/projectCard'
@@ -102,7 +103,12 @@ function ProjectsList() {
             >
               Visit Project
             </a>
-            <p>{repository.readme.text}</p>
+            <div
+              style={{ marginTop: 10 }}
+              dangerouslySetInnerHTML={{
+                __html: marked(repository.readme.text, { sanitize: true }),
+              }}
+            />
           </div>
         </Project>
       )
