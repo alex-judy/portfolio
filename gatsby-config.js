@@ -37,7 +37,7 @@ module.exports = {
           Authorization: `bearer ${process.env.GITHUB_GRAPHQL}`,
         },
         fetchOptions: {},
-        refetchInterval: 120,
+        refetchInterval: 45,
       },
     },
     'gatsby-transformer-remark',
@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-139786414-1",
+        trackingId: 'UA-139786414-1',
       },
     },
   ],
