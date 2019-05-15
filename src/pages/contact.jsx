@@ -85,18 +85,22 @@ export default () => (
           }}
         />
       </FormGroup>
-      <input
-        type="submit"
-        style={{
-          margin: '5% 30% 0 30%',
-          backgroundColor: 'black',
-          color: 'white',
-          maxWidth: '100%',
-          borderRadius: 30,
-          border: 'none',
-          outline: 0,
-        }}
-      />
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <input
+          type="submit"
+          value="Send"
+          style={{
+            margin: '5% 30% 0 30%',
+            backgroundColor: 'black',
+            color: 'white',
+            maxWidth: '100%',
+            borderRadius: 30,
+            border: 'none',
+            outline: 0,
+            width: '7em',
+          }}
+        />
+      </div>
     </form>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
